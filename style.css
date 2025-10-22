@@ -549,7 +549,7 @@ footer {
     right: 5px;
     /* Position 5px from the right edge of the wrapper */
     padding: 4px 10px;
-    background-color: #28a745;
+    background-color: #009dd2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -560,11 +560,44 @@ footer {
 
 /* Placeholder styling (if you want the smaller font) */
 .chat-input-field::placeholder {
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .chat-input-field::-webkit-input-placeholder {
     font-size: 14px;
+}
+
+/* --- Chat Message Alignment Styles (Add or correct in style.css) --- */
+
+/* Base style for all messages (if not already present) */
+.message {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    /* Messages shouldn't take up the whole width */
+    /* Ensure chat messages container (chat-messages) is using 'display: flex' and 'flex-direction: column' 
+       for align-self to work, which is done inline in your HTML:
+       <div id="chat-messages" style="... display: flex; flex-direction: column;">
+    */
+}
+
+/* 1. Bot Message: Align to the LEFT */
+.bot-message {
+    background-color: #e0e0e0;
+    /* Light grey */
+    align-self: flex-start;
+    /* Aligns to the start (left) */
+}
+ 
+.user-message {
+    background-color: #3d8fab;
+    /* Blue color */
+    color: white;
+    align-self: flex-end;
+    /* Aligns to the end (right) */
+    margin-left: auto;
+    /* Optional: ensures max width messages still push fully right */
 }
 
 

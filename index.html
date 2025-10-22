@@ -237,7 +237,7 @@
     </button>
 
     <div id="chat-window"
-        style="position: fixed; bottom: 80px; right: 20px; z-index: 1000; width: 300px; height: 300px; border: 1px solid #ccc; border-radius: 10px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; flex-direction: column;">
+        style="position: fixed; bottom: 10px; right: 20px; z-index: 1000; width: 300px; height: 320px; border: 1px solid #ccc; border-radius: 10px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; flex-direction: column;">
 
         <div
             style="padding: 10px; background-color: #007281; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; font-weight: bold;">
@@ -318,10 +318,18 @@
                         return "The owner has strong skills in Python, CSS, and HTML.";
                     } else if (lowerInput.includes('resume') || lowerInput.includes('password')) {
                         return "The resume is protected by a password. Please contact the owner directly for the key.";
-                    } else if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
-                        return "Hello there! I'm here to answer questions about this portfolio.";
+
+
+
+                    } else if (lowerInput.includes('name') || lowerInput.includes('created')) {
+                        return "Created by RAADHIMIK";
+
+
+
+                    } else if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hy') || lowerInput.includes('hay')) {
+                        return "Hello AMMU! I'm here to answer questions about this website.";
                     } else {
-                        return "I'm a simple bot right now ammutty, I don't have enough information to answer that.  skills elena resume pathi kelu.";
+                        return "I'm a simple bot right now ammutty, I don't have enough information to answer. skills elena resume pathi kelu. or contact RAADHIMIK";
                     }
                 }
             });
