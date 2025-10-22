@@ -240,8 +240,11 @@
         style="position: fixed; bottom: 10px; right: 20px; z-index: 1000; width: 300px; height: 320px; border: 1px solid #ccc; border-radius: 10px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; flex-direction: column;">
 
         <div
-            style="padding: 10px; background-color: #007281; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; font-weight: bold;">
-            Hai Ammutty Iam RP bot.
+            style="padding: 10px; background-color: #007bff; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; font-weight: bold; display: flex; justify-content: space-between; align-items: center;">
+            <span>AI Assistant Ammutty</span>
+
+            <button id="chat-close-button" class="chat-close-button">
+                &times; </button>
         </div>
 
         <div id="chat-messages" style="flex-grow: 1; padding: 10px; overflow-y: auto; background-color: #f9f9f9;">
@@ -264,6 +267,18 @@
                 const chatInput = document.getElementById('chat-input');
                 const sendButton = document.getElementById('send-button');
                 const chatMessages = document.getElementById('chat-messages');
+
+                // 1. Define the close button element
+                const closeButton = document.getElementById('chat-close-button');
+
+                // 2. Add the event listener to the close button
+                closeButton.addEventListener('click', () => {
+                    // 3. Action: Hide the entire chat window
+                    chatWindow.style.display = 'none';
+                });
+
+
+
 
                 // Toggle chat window visibility
                 chatButton.addEventListener('click', () => {
@@ -329,10 +344,11 @@
                     } else if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hy') || lowerInput.includes('hay')) {
                         return "Hello AMMU! I'm here to answer questions about this website.";
                     } else {
-                        return "I'm a simple bot right now ammutty, I don't have enough information to answer. skills elena resume pathi kelu. or contact RAADHIMIK";
+                        return " 😕I'm a simple bot right now ammutty, I don't have enough information to answer. Skills elena Resume pathi kelu, or contact RAADHIMIK";
                     }
                 }
             });
+
         </script>
 
 

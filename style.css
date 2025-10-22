@@ -600,6 +600,37 @@ footer {
     /* Optional: ensures max width messages still push fully right */
 }
 
+/* ======================================== */
+/* NEW CHAT CLOSE BUTTON STYLES (Add to style.css) */
+/* ======================================== */
+
+.chat-close-button {
+    background: none; /* Make the button transparent */
+    border: none;
+    color: white; /* Use white color for the 'x' */
+    font-size: 24px; /* Make the 'x' big enough */
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; /* Ensures the 'x' is centered properly */
+    padding: 0 5px; /* Little spacing */
+    transition: color 0.2s;
+}
+
+.chat-close-button:hover {
+    color: #ccc; /* Light grey on hover for feedback */
+}
+
+/* IMPORTANT: Ensure the chat header has flex styles for the button to align! */
+/* If you want to move the inline styles, you can put this in style.css:
+#chat-window > div:first-child {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+*/
+
+
+
 
 .skill-card3:hover {
 
