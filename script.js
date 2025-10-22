@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- CONFIGURATION ---
     const SECRET_PASSWORD = "Raadhimik"; 
-    const FILE_PATH = "img/img/KEERTIKA_RESUME.pdf"; 
+    const FILE_PATH = "img/KEERTIKA_RESUME.pdf"; 
     // ---------------------
     
     // --- Stage 1: Initial Click (Shows the Input) ---
