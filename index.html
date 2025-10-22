@@ -50,7 +50,7 @@
 
         </div>
         <section class="homee">
-            <div rel="home" id="kk">
+            <div  id="kk">
                 <h3 id="gr"> Hi, It's me, <span style="color: aqua;">KEERTHIKA.S</span> <i style="font-size: 28px;"
                         class="fa-solid fa-graduation-cap"></i></h3>
 
@@ -225,6 +225,108 @@
         </div>
     </footer>
     </div>
+
+
+
+
+
+
+<button id="chat-button" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 15px; border-radius: 50%; background-color: #0f9fd4; color: white; border: none; cursor: pointer;">
+    💬 AI BOT
+</button>
+
+<div id="chat-window" style="position: fixed; bottom: 80px; right: 20px; z-index: 1000; width: 300px; height: 300px; border: 1px solid #ccc; border-radius: 10px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: none; flex-direction: column;">
+    
+    <div style="padding: 10px; background-color: #007281; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px; font-weight: bold;">
+        Hai Ammutty Iam RP bot.
+    </div>
+    
+    <div id="chat-messages" style="flex-grow: 1; padding: 10px; overflow-y: auto; background-color: #f9f9f9;">
+        <div class="message bot-message">Hello! Ammuty Epdi Erukke.</div>
+    </div>
+    
+  <div style="padding: 10px; border-top: 1px solid #ccc;">
+    <div id="input-container-wrapper"> 
+        <input type="text" id="chat-input" placeholder="Type your message..." class="chat-input-field">
+        <button id="send-button" class="chat-send-button">Send</button>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatButton = document.getElementById('chat-button');
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        const chatMessages = document.getElementById('chat-messages');
+
+        // Toggle chat window visibility
+        chatButton.addEventListener('click', () => {
+            const isVisible = chatWindow.style.display === 'flex';
+            chatWindow.style.display = isVisible ? 'none' : 'flex';
+            if (!isVisible) {
+                chatInput.focus();
+            }
+        });
+
+        // Function to send and process message
+        const processMessage = () => {
+            const userText = chatInput.value.trim();
+            if (userText === '') return;
+
+            // 1. Display User Message
+            appendMessage(userText, 'user');
+            chatInput.value = '';
+
+            // 2. Simulate AI Response (THIS IS WHERE REAL AI API CALL GOES)
+            setTimeout(() => {
+                const aiResponse = generateSimulatedResponse(userText);
+                appendMessage(aiResponse, 'bot');
+            }, 1000); // Wait 1 second for simulation
+        };
+
+        // Event listeners for sending
+        sendButton.addEventListener('click', processMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                processMessage();
+            }
+        });
+
+        // Helper function to create and append message bubbles
+        function appendMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            
+            // Scroll to the latest message
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // --- SIMULATED AI RESPONSE FUNCTION ---
+        // Replace the logic inside this function with your actual AI API call later
+        function generateSimulatedResponse(userInput) {
+            const lowerInput = userInput.toLowerCase();
+            
+            if (lowerInput.includes('skills')) {
+                return "The owner has strong skills in Python, CSS, and HTML.";
+            } else if (lowerInput.includes('resume') || lowerInput.includes('password')) {
+                return "The resume is protected by a password. Please contact the owner directly for the key.";
+            } else if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
+                return "Hello there! I'm here to answer questions about this portfolio.";
+            } else {
+                return "I'm a simple bot right now. I don't have enough information to answer that. Try asking about skills or resume.";
+            }
+        }
+    });
+</script>
+
+
+
+
 </body>
 
 

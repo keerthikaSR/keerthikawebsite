@@ -92,6 +92,7 @@ nav {
     /* vertical center */
     padding: 0 20px;
     box-sizing: border-box;
+    
 }
 
 #gr {
@@ -163,7 +164,6 @@ nav {
 
 
 }
-
 
 
 
@@ -489,6 +489,46 @@ padding-top: 10px;
     margin-left: 4px;
 }
 
+
+
+/* --- NEW/CORRECTED STYLES FOR CHAT INPUT --- */
+
+/* 1. The wrapper holds the input and button. MUST be relative! */
+#input-container-wrapper {
+    position: relative; /* CRITICAL: Establishes context for absolute positioning */
+    display: flex; 
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width of the padding container */
+}
+
+/* 2. The input field */
+.chat-input-field {
+    width: 100%; /* Take full width of the wrapper */
+    padding: 8px;
+    padding-right: 60px; /* IMPORTANT: Creates space for the button on the right */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Prevents padding from making the input wider than its container */
+}
+
+/* 3. The Send Button is positioned over the input field */
+.chat-send-button {
+    position: absolute; /* CRITICAL: Allows button to be placed freely */
+    right: 5px; /* Position 5px from the right edge of the wrapper */
+    padding: 4px 10px; 
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    height: 80%; /* Makes button height match the input field nicely */
+}
+
+/* Placeholder styling (if you want the smaller font) */
+.chat-input-field::placeholder { font-size: 14px; }
+.chat-input-field::-webkit-input-placeholder { font-size: 14px; }
+
+
 .skill-card3:hover {
 
     border-color: var(--accent);
@@ -528,27 +568,7 @@ padding-top: 10px;
     #g {
         width: 100%;
         height: 40px;
-        position: fixed;
 
     }
-
-
-
-}
-/* Default: Desktop view */
-
-/* Mobile view (width ≤ 768px) */
-@media (min-width: 768px) {
-  body {
-    transform: scale(); /* scales to 1/4 (i.e., 4× smaller) */
-    transform-origin: top left;
-  }
-
-#kk{
-       transform: scale(1); /* scales to 1/4 (i.e., 4× smaller) */
-    transform-origin: top left;
-}
-
-
 
 }
