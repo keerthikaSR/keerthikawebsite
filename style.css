@@ -300,48 +300,70 @@ padding-top: 10px;
 
 
 
+/* Variables for easy customization */
+:root {
+    /* 29 characters in "Click here to view my profile" + space/dot if any. Using 30 for safety. */
+    --CHAR-COUNT: 30; 
+    --TYPING-DURATION: 4s; /* Time it takes to type the text */
+    --PAUSE-DURATION: 4s;  /* Time to wait after typing (was 3s in your request, now 4s) */
+    --TOTAL-CYCLE-TIME: calc(var(--TYPING-DURATION) + var(--PAUSE-DURATION)); /* 8s total for one type+pause cycle */
+}
+
 /* --- The Typing Text Container --- */
 .typing-effect {
-    /* (Existing properties) */
+    /* Existing properties */
     width: 0; 
     overflow: hidden; 
     white-space: nowrap; 
     margin: 10px auto; 
     border-right: 0.15em solid #ffffff; 
-    
-    /* NEW/MODIFIED Animation Definitions */
+    color: rgb(24, 255, 214); 
+    font-size: 15px; 
+
+    /* UPDATED Animation Definitions */
     animation: 
-        /* 1. The typing animation (now set to 'infinite' loop) */
-        typing 6s steps(30, end) infinite, /* '4s' is the duration of the typing */
+        /* 1. The typing animation, total cycle time is TYPING + PAUSE */
+        typing var(--TOTAL-CYCLE-TIME) steps(var(--CHAR-COUNT), end) infinite, 
         
-        /* 2. The cursor blink animation (now set to 'infinite' loop) */
-        blink-caret 10s step-end infinite;
+        /* 2. The cursor blink animation (stays the same) */
+        blink-caret 0.75s step-end infinite;
     
-    /* NEW Property: Delay between loops */
-    animation-delay: 3s; /* This creates a 3-second pause before the animation restarts */
+    /* REMOVED: animation-delay: 3s; (The delay is now integrated into the @keyframes) */
 }
 
-/* --- Keyframe Animation: TYPE --- */
-/* (This block remains the same, but the animation duration will now include the delay) */
+/* --- Keyframe Animation: TYPE (MODIFIED) --- */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 22.5ch } 
+    /* 1. Typing Phase (0% to 50% of the cycle) */
+    /* Calculate the percentage of the total cycle time dedicated to typing: 
+       4s (typing) / 8s (total cycle) = 50% */
+    
+    from { 
+        width: 0; 
+    }
+    
+    50% { 
+        /* The text is fully typed */
+        width: 22.5ch; /* Use 'ch' unit which is based on the font's character width */
+    }
+    
+    /* 2. Pause Phase (50% to 100% of the cycle) */
+    /* Maintain full width (the text is visible and the cursor blinks for 4s) */
+    99.9% { 
+        width: 22.5ch; 
+    }
+    
+    /* 3. Reset Phase (at 100% of the cycle) */
+    /* Snap back to 0 width to instantly clear the text and restart the loop */
+    to { 
+        width: 0; 
+    }
 }
 
-/* --- Keyframe Animation: CURSOR BLINK --- */
-/* (This block remains the same) */
+/* --- Keyframe Animation: CURSOR BLINK (REMAINS THE SAME) --- */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #ffffff; }
 }
-
-/* --- Applying your existing styles for the text color/font --- */
-.typing-effect {
-    color: rgb(24, 255, 214); 
-    font-size: 15px; 
-    /* margin-top: 10px; - Assuming this came from your previous #pro style */
-}
-
 
 
 
