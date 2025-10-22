@@ -83,6 +83,10 @@
 
 }
 
+.ds {
+    font-weight: bolder;
+    color: #d4e81c;
+}
 
 nav {
     width: 100%;
@@ -94,6 +98,7 @@ nav {
     /* vertical center */
     padding: 0 20px;
     box-sizing: border-box;
+
 
 }
 
@@ -111,7 +116,8 @@ nav {
 }
 
 #s {
-    margin-left: 12px; margin-top: 2px;
+    margin-left: 12px;
+    margin-top: 2px;
 
 }
 
@@ -249,7 +255,7 @@ p {
     }
 
     75% {
-        color: rgb(212, 255, 0);
+        color: rgb(128, 0, 255);
     }
 }
 
@@ -589,7 +595,7 @@ footer {
     align-self: flex-start;
     /* Aligns to the start (left) */
 }
- 
+
 .user-message {
     background-color: #3d8fab;
     /* Blue color */
@@ -605,19 +611,25 @@ footer {
 /* ======================================== */
 
 .chat-close-button {
-    background: none; /* Make the button transparent */
+    background: none;
+    /* Make the button transparent */
     border: none;
-    color: white; /* Use white color for the 'x' */
-    font-size: 24px; /* Make the 'x' big enough */
+    color: white;
+    /* Use white color for the 'x' */
+    font-size: 24px;
+    /* Make the 'x' big enough */
     font-weight: bold;
     cursor: pointer;
-    line-height: 1; /* Ensures the 'x' is centered properly */
-    padding: 0 5px; /* Little spacing */
+    line-height: 1;
+    /* Ensures the 'x' is centered properly */
+    padding: 0 5px;
+    /* Little spacing */
     transition: color 0.2s;
 }
 
 .chat-close-button:hover {
-    color: #ccc; /* Light grey on hover for feedback */
+    color: #ccc;
+    /* Light grey on hover for feedback */
 }
 
 /* IMPORTANT: Ensure the chat header has flex styles for the button to align! */
