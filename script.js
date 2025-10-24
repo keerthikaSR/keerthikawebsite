@@ -43,3 +43,60 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const downloa= document.getElementById('downloa');
+    const pass = document.getElementById('pass');
+
+    // --- CONFIGURATION ---
+    const SECRET_PASSWORDD = "Raadhimik";
+    const FILE_PATH = "img/CERTIFICATES.pdf";
+    // ---------------------
+
+    // --- Stage 1: Initial Click (Shows the Input) ---
+    downloa.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (pass.style.display === 'none' || pass.style.display === '') {
+            pass.style.display = 'block';
+            pass.focus();
+            downloa.textContent = 'CONFIRM DOWNLOAD (Enter Key)';
+        }
+    });
+
+    // --- Stage 2: Password Check (on Enter Keypress) ---
+    pass.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+
+            // Success check: Use trim() to remove any accidental spaces
+            if (pass.value.trim() === SECRET_PASSWORDD) {
+
+                // Success: Update the UI
+                pass.style.display = 'none';
+                downloa.textContent = 'Download Starting...';
+
+                // MOST RELIABLE DOWNLOAD METHOD: Forces the browser to the file path
+                window.location.href = FILE_PATH;
+
+            } else {
+                // Failure
+                alert("Incorrect password. Please try again.");
+                pass.value = "";
+                pass.focus();
+            }
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
