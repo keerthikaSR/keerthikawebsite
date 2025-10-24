@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pass = document.getElementById('pass');
 
     // --- CONFIGURATION ---
-    const SECRET_PASSWORDD = "Raadhimik";
     const FILE_PATH = "img/CERTIFICATES.pdf";
     // ---------------------
 
@@ -67,6 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const downloa= document.getElementById('downloar');
+    const pass = document.getElementById('pass');
+
+    // --- CONFIGURATION ---
+    const FILE_PATH = "img/Keerthi_Semster_Wise_mark_sheet.pdf";
+    // ---------------------
+
+    // --- Stage 1: Initial Click (Shows the Input) ---
+    downloa.addEventListener('click', (e) => {
+        e.preventDefault();
+ window.location.href = FILE_PATH;
+     
+    });
+
+});
 
 
 

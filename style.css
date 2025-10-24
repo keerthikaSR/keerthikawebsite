@@ -215,15 +215,22 @@ nav {
 
 #rest {
     margin-top: 25px;
-margin-left: 34px;
+margin-left: 30px;
     display: inline-block;
     font-size: 10px;
     color: rgb(150, 161, 172);
     font-weight: 1px;
 }
 
-
-
+#restr
+{
+    margin-top: 16px;
+margin-left: 34px;
+    display: inline-block;
+    font-size: 10px;
+    color: rgb(150, 161, 172);
+    font-weight: 1px;
+}
 
 
 #logo {
@@ -264,6 +271,41 @@ p {
 #s {
     margin-left: 10px;
 }
+
+#downloar{
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    width: 110px;
+    text-decoration: none;
+    font-size: 8px;
+    color: #00f8ec;
+    font-weight: bold;
+    border: 1px solid rgb(16, 181, 161);
+    padding: 11px 1px;
+    display: flex;
+    height: 1px;
+    text-align: center;
+    border-radius: 50px;
+    text-transform: uppercase;
+    justify-content: center;
+    letter-spacing: 0px;
+    transition: 0.3s;
+    margin-top: 10px;
+    margin-left: 8px;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(15, 205, 205, 0.404);
+    box-shadow:
+        0 0 4px #0ff,
+        0 0 1.2px #0ff,
+        0 0 3px #0ff,
+        0 0.1px #0ff;
+
+}
+
+
+
 
 #downloadTrigger {
     font-family: 'Poppins', sans-serif;
@@ -532,7 +574,7 @@ footer {
     border: 1px solid rgba(225, 225, 225, 0.1);
     backdrop-filter: blur(5px);
     width: 275px;
-    height: 130px;
+    height: 150px;
     margin-top: 10px;
     margin-left: 15px;
 }
