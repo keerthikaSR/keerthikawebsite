@@ -47,7 +47,18 @@
         font-weight: bolder;
     }
 
+    #cl{
+        font-weight: bolder;
+        color: rgb(245, 188, 34);
+        margin-top: 15px;
+        font-size: 14px;
+    }
 
+    #cll{
+        color: #02e45c;
+        font-size: 14px;
+         margin-top: 15px;
+    }
     .skill-card2 {
 
         padding: 2px;
@@ -56,11 +67,11 @@
         transition: all 0.3s ease;
         border: 2px solid rgba(225, 225, 225, 0.1);
         backdrop-filter: blur(5px);
-        width: 310px;
-        height: 100px;
+        width: 330px;
+        height: 225px;
         animation: blinkColors 1s infinite;
         margin-top: 10px;
-        margin-left: 5px;
+        margin-left: 10px;
     }
 
     #qw {
