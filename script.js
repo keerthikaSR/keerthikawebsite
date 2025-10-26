@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pass = document.getElementById('pass');
 
     // --- CONFIGURATION ---
-    const FILE_PATH = "img/CERTIFICATES.pdf";
+    const FILE_PATH = "img/CERTIFICATES_papu.pdf";
     // ---------------------
 
     // --- Stage 1: Initial Click (Shows the Input) ---
